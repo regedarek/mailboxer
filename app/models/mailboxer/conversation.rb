@@ -151,6 +151,7 @@ class Mailboxer::Conversation < ActiveRecord::Base
       Mailboxer::ReceiptBuilder.new({
         :notification => message,
         :receiver     => participant,
+        :mailbox_type => 'inbox',
         :updated_at   => message.updated_at,
         :created_at   => message.created_at
       }).build.save
